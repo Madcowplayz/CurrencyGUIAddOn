@@ -12,6 +12,10 @@ local function FixObject(obj)
 	if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
 		obj.TextTransparency = 0
 	end
+
+	if obj.Name:lower() == "Background" and obj:IsA("GuiObject") then
+		obj.BackgroundTransparency = 0.5
+	end
 end
 
 FixObject(Currency)
