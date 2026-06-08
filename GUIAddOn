@@ -13,7 +13,7 @@ local function FixObject(obj)
 		obj.TextTransparency = 0
 	end
 
-	if obj.Name:lower() == "Background" and obj:IsA("GuiObject") then
+	if obj.Name:lower() == "Background" and obj:IsA("Frame") then
 		obj.BackgroundTransparency = 0.5
 	end
 end
