@@ -1,0 +1,23 @@
+local Currency = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Currency")
+
+local function FixObject(obj)
+	if obj:IsA("GuiObject") then
+		obj.Visible = true
+	end
+
+	if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then
+		obj.ImageTransparency = 0
+	end
+
+	if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+		obj.TextTransparency = 0
+	end
+end
+
+FixObject(Currency)
+
+for _, obj in ipairs(Currency:GetDescendants()) do
+	FixObject(obj)
+end
+
+Currency.DescendantAdded:Connect(FixObject)
